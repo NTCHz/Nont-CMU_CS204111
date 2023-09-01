@@ -8,6 +8,7 @@ m1 = float(input("m1: ")) #input m1
 b1 = float(input("b1: ")) #input b1
 m2 = float(input("m2: ")) #input m2
 b2 = float(input("b2: ")) #input b2
+b3 = float(input("b3: ")) #input b2
 
 # y1 = m1x + b1 , y2 = m2x + b2 #mathematical equations
 

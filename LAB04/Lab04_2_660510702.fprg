@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="NTCHz"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2566-07-16 07:20:33 PM"/>
+        <attribute name="created" value="TlRDSHo7REVTS1RPUC1EQkRQUElPOzI1NjYtMDctMTY7MDY6NTE6NTUgUE07MjgxOQ=="/>
+        <attribute name="edited" value="TlRDSHo7REVTS1RPUC1EQkRQUElPOzI1NjYtMDctMTY7MDc6MjA6MzMgUE07MTsyOTIw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, c" type="Integer" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <call expression="myminmidmax(a,b,c)"/>
+        </body>
+    </function>
+    <function name="myminmidmax" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+            <parameter name="c" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="minvalue, midvalue, maxvalue" type="Integer" array="False" size=""/>
+            <assign variable="minvalue" expression="a"/>
+            <if expression="b &lt; minvalue">
+                <then>
+                    <assign variable="minvalue" expression="b"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="c &lt; minvalue">
+                <then>
+                    <assign variable="minvalue" expression="c"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="maxvalue" expression="a"/>
+            <if expression="b &gt; maxvalue">
+                <then>
+                    <assign variable="maxvalue" expression="b"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="c &gt; maxvalue">
+                <then>
+                    <assign variable="maxvalue" expression="c"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="midvalue" expression="a + b + c - minvalue - maxvalue"/>
+            <output expression="&quot;min = &quot; &amp; minvalue" newline="True"/>
+            <output expression="&quot;mid = &quot; &amp; midvalue" newline="True"/>
+            <output expression="&quot;max = &quot; &amp; maxvalue" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

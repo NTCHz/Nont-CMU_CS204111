@@ -11,6 +11,14 @@ def main():
     test()
 
 def median_of_median(list_a):
+    
+    '''
+    หาโดยการหาความยาวแล้วหาร 3 ไม่เอาเศษเเพื่อที่จะตัด list_a เป็นสามส่วน
+    จากนั้นก็เรียกใช้ฟังก์ชั่นเดิมโดยที่หา median ของแต่ละอันไปเรื่อยๆแล้วนำกลับมารวมกันทำซ้ำ
+    จนเหลือเพียงตัวเดียวแล้วให้คืนค่าตัวนั้นเป็นค่า float
+    '''
+
+    
     if len(list_a) == 0:
         return []
 
@@ -23,19 +31,14 @@ def median_of_median(list_a):
     if len(list_a) == 3:
         Max_ = max(list_a)
         Min_ = min(list_a)
-        list_a.remove(Max_)
-        list_a.remove(Min_)
-        return list_a[0]
+        return sum(list_a) - Max_ - Min_
             
     len_list = len(list_a)
     len_li = len_list // 3
     list_A = median_of_median(list_a[:len_li])
     list_B = median_of_median(list_a[len_li:len_li*2])
     list_C = median_of_median(list_a[len_li*2:])
-    list_a = []
-    list_a.append(list_A)
-    list_a.append(list_B)
-    list_a.append(list_C)
+    list_a = [list_A, list_B, list_C]
     return float(median_of_median(list_a))
     
 def test():

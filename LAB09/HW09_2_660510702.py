@@ -32,14 +32,11 @@ def median_of_median(list_a):
     list_A = median_of_median(list_a[:len_li])
     list_B = median_of_median(list_a[len_li:len_li*2])
     list_C = median_of_median(list_a[len_li*2:])
-    # print(list_A)
-    # print(list_B)
-    # print(list_C)
-    list_c = []
-    list_c.append(list_A)
-    list_c.append(list_B)
-    list_c.append(list_C)
-    return float(median_of_median(list_c))
+    list_a = []
+    list_a.append(list_A)
+    list_a.append(list_B)
+    list_a.append(list_C)
+    return float(median_of_median(list_a))
     
 def test():
     print (median_of_median([2, 3, 2, 1, 1, 1, 1]))

@@ -16,7 +16,7 @@ def reverse_digits(x):
     # ตรวจว่า x เป็นเลข 0-9
     if x < 10 and x >= 0:
         return x
-    
+
     # หาตัวสุดท้าย
     last = x % 10
     # หาตัวที่เหลือ

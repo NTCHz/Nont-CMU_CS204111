@@ -14,18 +14,6 @@ def base_b(x, b):
     
     return base_b(x // b, b) * 10 + (x % b)
 
-    # # ถ้า x น้อยกว่า b
-
-
-    # if x < b:
-    #     return x
-    # else:
-    #     head = x % b
-    #     tail = base_b(x // b, b) * 10
-    #     # คืนค่าคำตอบ
-    #     return  head + tail
-    
-
 def test():
     print(base_b(-8, 2))
     print(base_b(11, 3))

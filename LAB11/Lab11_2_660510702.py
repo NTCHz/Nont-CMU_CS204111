@@ -4,6 +4,8 @@
 # Lab11_2
 # 204111 Sec 002
 
+import time
+
 def my_id():
     return "660510702"
 
@@ -15,6 +17,7 @@ def main():
     
 
 def matching_sum(t, target_value):
+    
     t = set(t)
     result = []
 
@@ -22,8 +25,8 @@ def matching_sum(t, target_value):
         complement = target_value - num
         if complement in t:
             if num != 0 and complement != 0:
-                result.append([num, complement])
-
+                return [num, complement]
+            
     return(result)
 
 

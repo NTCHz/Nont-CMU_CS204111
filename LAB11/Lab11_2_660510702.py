@@ -4,8 +4,6 @@
 # Lab11_2
 # 204111 Sec 002
 
-import time
-
 def my_id():
     return "660510702"
 
@@ -17,17 +15,31 @@ def main():
     
 
 def matching_sum(t, target_value):
-    
-    t = set(t)
-    result = []
+    # กำหนดตัวแปล
+    a = set()
+    d = {}
 
-    for num in t:
-        complement = target_value - num
-        if complement in t:
-            if num != 0 and complement != 0:
-                return [num, complement]
+    # เพิ่ม keyword ลงใน dict
+    for i in t:
+        d[i] = 0
+
+    # เพิ่มจำนวนข้อมูลใน keyword แต่ละตัว และเพิ่มสมาชิกลงไปใน set
+    for i in t:
+        d[i] += 1
+        a.add(i) 
+
+    for num in a:
+        com = target_value - num
+        # กรณีที่เอา target - จำนวนแล้วได้จำนวนนั้นให้เช็คอีกว่ามีกี่ตัวใน dict แล้วจึงคืนค่าตัวนั้น
+        if  com == num and d[num] >= 2:
+            return [num, target_value - num]
+        
+        # กรณีที่ target - จำนวน แล้วได้จำนวนที่อยู่ใน set a แต่ต้องไม่ได้ตัวเอง แล้วจึงคืนค่าตัวนั้น
+        if com in a and com != num:
+            return [num, target_value - num]
             
-    return(result)
+    # คืนค่ากรณีที่ไม่มีตัวไหนเลย
+    return []
 
 
 if __name__ == '__main__':

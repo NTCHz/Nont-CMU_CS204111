@@ -6,7 +6,7 @@
 
 def main():
     print(split_and_merge(3))
-    # print(split_and_merge(4))
+    # print(split_and_merge(5))
 
 def my_id():
     return "660510702"
@@ -35,24 +35,38 @@ def arrival_sequences(left_lane, right_lane):
     return left_first + right_first
 
 def split_and_merge(n):
-    a = list(map(str ,range(1,n+1)))
-    a = "".join(a)
-    list_result = []
-    
-    for i in range(n):
-        left = tuple((a[0]))
-        right = tuple((a[1:]))
-        list_result += arrival_sequences(left,right)
-        a = a[1:] + a[0]
 
-    list_result = set(list_result)
-    result = list(list_result)
+    # สร้างรายการว่างเพื่อเก็บลำดับที่เป็นไปได้
+    result = []
+
+    # สร้าง list ต้นฉบับ
+    original = list(map(str, range(1, n + 1)))
+
+    # สร้างฟังก์ชันเพื่อแยกลำดับออกเป็นสองทาง
+    def split(x, a, b):
+
+        if not x:
+            # เก็บค่าที่ได้จากการส่ง tuple ไปยัง func arrival_sequences
+            result.extend(arrival_sequences(tuple(a),tuple(b)))
+        else:
+            # หาค่าแรกในลำดับ
+            current = x[0]
+
+            # เรียกตัวเองเพื่อแยกลำดับและนำไปยังสองทาง
+            split(x[1:], a + [current], b)
+            split(x[1:], a, b + [current])
+
+    # เรียกใช้ฟังก์ชัน
+    split(original, [], [])
+
+    # แปลงเป็น set เพื่อเอาเลขซ้ำออก
+    result = set(result)
+
+    # เรียงลำดับ
+    result = sorted(list(result))
+
+    # คืนค่า
     return result
-        
-
-
-    
-
 
 if __name__ == '__main__':
     main()

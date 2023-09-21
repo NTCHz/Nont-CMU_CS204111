@@ -8,7 +8,7 @@ import string
 
 def main():
     # assert words_to_num("fourteen") == 14
-    print(words_to_num("two hundred forty-eight"))
+    print(words_to_num("ten thousand million"))
     print(words_to_num("forty-two billion six hundred forty-one million three hundred twenty-three thousand eight hundred sixty-two"))
     # print(words_to_num("one hundred eleven"))
     # assert words_to_num("forty-two billion six hundred forty-one million three hundred twenty-three thousand eight hundred sixty-two") == 42641323862

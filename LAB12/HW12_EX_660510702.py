@@ -14,15 +14,17 @@ def main():
 
 def xmas_tree(n):
     
-    tree = ""
+    tree = "\n"
     if n < 1:
         return ""
-
+    
+    # ส่วนบน
     tree += (" "*(n+4)) + ("|\n")
     tree += (" "*(n+2)) + ("--*--\n")
     tree += (" "*(n+3)) + ("/|\\\n")
     tree += (" "*(n+2)) + ("/* *\\\n")
 
+    # ส่วนกลาง 3 แถว
     for i in range(n):
         for a in range(3):
             tree += " "*(2-a)
@@ -35,9 +37,11 @@ def xmas_tree(n):
             
             tree += ("*\\\n")
 
+    # ส่วนล่าง
     tree += (" ")*(n+3) + ("|||\n")
     tree += ("_")*(n+3) + ("|||") + ("_")*(n+3) + ("\n")
 
+    # คืนค่า
     return tree    
     
 

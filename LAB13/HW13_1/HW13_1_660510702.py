@@ -7,10 +7,10 @@
 import copy
 
 def main():
-    # print(square_matrix([[2, 3, 4], [1, 2, 3]]))
-    # print(square_matrix([[1, 2], [1, 2, 3], [1, 2], [1, 2], [1]]))
-    # print(square_matrix([[1, 2], [3, 4], [5, 6]] ))
-    pass
+    print(square_matrix([[2, 3, 4], [1, 2, 3]]))
+    print(square_matrix([[1, 2], [1, 2, 3],[1] ,[1, 2], [1, 2]]))
+    print(square_matrix([[1, 2], [3, 4], [5, 6]] ))
+    # pass
 
 def my_id():
     return '660510702'
@@ -35,6 +35,8 @@ def square_matrix(list_x):
     if row < col:
         for i in range (col-row):
             list_x.append([0] * col)
+
+    return list_x
     
 
 if __name__ == '__main__':
